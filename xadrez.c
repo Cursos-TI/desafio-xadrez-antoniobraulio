@@ -17,6 +17,12 @@ int main() {
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
+    //     NIVEL NOVATO CONCLUIDO
+
+    // Nível Aventureiro - Movimentação do Cavalo
+    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
+    // Um loop pode representar a movimentação horizontal e outro vertical.
+    
     //Declaracao e inicializacao das variaveis
     char* nomePeca = "Peca a mover";
     int paraCima = 0;
@@ -27,6 +33,10 @@ int main() {
     int paraCimaEsquerda = 0;
     int paraBaixoDireita = 0;
     int paraBaixoEsquerda = 0;
+    int paraDireitaCima = 0;
+    int paraDireitaBaixo = 0;
+    int paraEsquerdaCima = 0;
+    int paraEsquerdaBaixo = 0;
     int opcaoPeca = 0;
     int opcaoMovimeto = 0;
 
@@ -38,7 +48,8 @@ int main() {
         printf("1 - Rainha\n");
         printf("2 - Torre\n");
         printf("3 - Bispo\n");
-        printf("4 - Sair do jogo\n");
+        printf("4 - Cavalo\n");
+        printf("5 - Sair do jogo\n");
         printf("Opcao: ");
         scanf("%d",&opcaoPeca);
     
@@ -136,12 +147,12 @@ int main() {
                         case 9:
                             printf("Escolha outra peca.");
                             opcaoMovimeto = 0;
-                            opcaoPeca = 5;
+                            opcaoPeca = 6;
                             break;           
                         default:
                             printf("Escolha errada, deve ser entre 1 e 9.\n");
                             opcaoMovimeto = 10;
-                            opcaoPeca = 5;
+                            opcaoPeca = 6;
                             break;
                     }
                 } while (opcaoMovimeto != 0);
@@ -201,12 +212,12 @@ int main() {
                         case 5:
                             printf("Escolha outra peca.");
                             opcaoMovimeto = 0;
-                            opcaoPeca = 5;
+                            opcaoPeca = 6;
                             break;           
                         default:
                             printf("Escolha errada, deve ser entre 1 e 5.\n");
                             opcaoMovimeto = 6;
-                            opcaoPeca = 5;
+                            opcaoPeca = 6;
                             break;
                     }
                 } while (opcaoMovimeto != 0);
@@ -270,28 +281,127 @@ int main() {
                         default:
                             printf("Escolha errada, deve ser entre 1 e 5.\n");
                             opcaoMovimeto = 6;
-                            opcaoPeca = 5;
+                            opcaoPeca = 6;
                             break;
                     }
                 } while (opcaoMovimeto != 0);
                 break;
             case 4:
+                do
+                {
+                    printf("\nSelecione a direcao e sentido do movimento do Cavalo:\n");
+                    printf("1 - Para cima e a direita\n");
+                    printf("2 - Para cima e a esquerda\n");
+                    printf("3 - Para a direita e a cima\n");
+                    printf("4 - Para a direita e a baixo\n");
+                    printf("5 - Para baixo e a direita\n");
+                    printf("6 - Para baixo e a esquerda\n");
+                    printf("7 - Para a direita e a cima\n");
+                    printf("8 - Para a direita e a baixo\n");
+                    printf("9 - Escolher outra peca\n");
+                    printf("Opcao: ");
+                    scanf("%d",&opcaoMovimeto);
+
+                    switch (opcaoMovimeto)
+                    {
+                        case 1:
+                            paraCimaDireita = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraCimaDireita; i++)
+                            {
+                                printf("Cavalo move para cima\n");
+                            }
+                            printf("Cavalo move para a direita\n");
+                            break;
+                        case 2:
+                            paraCimaEsquerda = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraCimaEsquerda; i++)
+                            {
+                                printf("Cavalo move para cima\n");
+                            }
+                            printf("Cavalo move para a esquerda\n");
+                            break;
+                        case 3:
+                            paraDireitaCima = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraDireitaCima; i++)
+                            {
+                                printf("Cavalo move para a direita\n");
+                            }
+                            printf("Cavalo move para cima\n");
+                            break;
+                        case 4:
+                            paraDireitaBaixo = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraDireitaBaixo; i++)
+                            {
+                                printf("Cavalo move para a direita\n");
+                            }
+                            printf("Cavalo move para baixo\n");
+                            break;
+                        case 5:
+                            paraBaixoDireita = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraBaixoDireita; i++)
+                            {
+                                printf("Cavalo move para baixo\n");
+                            }
+                            printf("Cavalo move para a direita\n");
+                            break;
+                        case 6:
+                            paraBaixoEsquerda = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraBaixoEsquerda; i++)
+                            {
+                                printf("Cavalo move para baixo\n");
+                            }
+                            printf("Cavalo move para a esquerda\n");
+                            break;
+                        case 7:
+                            paraDireitaCima = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraDireitaCima; i++)
+                            {
+                                printf("Cavalo move para a direita\n");
+                            }
+                            printf("Cavalo move para cima\n");
+                            break;
+                        case 8:
+                            paraDireitaBaixo = 2;
+                            printf("\n");
+                            for(int i = 1; i <= paraDireitaBaixo; i++)
+                            {
+                                printf("Cavalo move para a direita\n");
+                            }
+                            printf("Cavalo move para baixo\n");
+                            break;
+                        case 9:
+                            printf("Escolha outra peca.");
+                            opcaoMovimeto = 0;
+                            opcaoPeca = 6;
+                            break;           
+                        default:
+                            printf("Escolha errada, deve ser entre 1 e 9.\n");
+                            opcaoMovimeto = 10;
+                            opcaoPeca = 6;
+                            break;
+                    }
+                } while (opcaoMovimeto != 0);
+                break;
+            case 5:
                 printf("Voce escolheu sair do jogo.\n");
                 opcaoPeca = 0;
                 break;
             default:
-                printf("Escolha errada, deve ser entre 1 e 4.\n");
+                printf("Escolha errada, deve ser entre 1 e 5.\n");
                 opcaoPeca = 0;
                 break;
         }
     } while (opcaoPeca != 0);
 
     printf("Jogo encerrado.\n");
-
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
